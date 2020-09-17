@@ -1,5 +1,9 @@
 .App {
+  width: 90%;
   text-align: center;
+  margin:0 auto;
+  padding: 0 auto;
+  overflow:hidden;
 }
 
 .App-logo {
@@ -36,3 +40,27 @@
     transform: rotate(360deg);
   }
 }
+path:hover {
+  fill:blue;
+  cursor: pointer;
+  transition: 200ms;
+  outline:none;
+}
+path:not(:hover) {
+  transition: 400ms;
+  outline:none;
+}
+#myWindow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #999;
+}
+
+#myContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+

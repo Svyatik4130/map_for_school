@@ -3,12 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@south-paw/react-vector-maps": "^3.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "jquery": "^3.5.1",
+    "konva": "^7.1.2",
+    "mouse-wheel-zoom": "^1.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-konva": "^16.13.0-6",
+    "react-scripts": "3.4.3",
+    "react-simple-maps": "^2.1.2",
+    "react-sizeme": "^2.6.12",
+    "react-zoom-pan-pinch": "^1.6.1",
+    "vanilla-js-wheel-zoom": "^6.2.0",
+    "wheelzoom": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
