@@ -44,23 +44,13 @@ path:hover {
   fill:blue;
   cursor: pointer;
   transition: 200ms;
-  outline:none;
+  /* outline:none; */
 }
 path:not(:hover) {
   transition: 400ms;
   outline:none;
 }
-#myWindow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #999;
-}
 
-#myContent {
-  position: relative;
-  display: flex;
-  align-items: center;
+.react-transform-component{
+  align:left;
 }
-
