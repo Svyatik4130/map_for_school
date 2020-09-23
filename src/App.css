@@ -1,9 +1,12 @@
 .App {
-  width: 90%;
+  width: 80%;
   text-align: center;
-  margin:0 auto;
-  padding: 0 auto;
+  margin:0;
   overflow:hidden;
+}
+.Container{
+  justify-content: flex-start;
+  display: flex;
 }
 
 .App-logo {
@@ -44,7 +47,7 @@ path:hover {
   fill:blue;
   cursor: pointer;
   transition: 200ms;
-  /* outline:none; */
+  outline:none;
 }
 path:not(:hover) {
   transition: 400ms;
@@ -53,4 +56,31 @@ path:not(:hover) {
 
 .react-transform-component{
   align:left;
+  justify-content: start;
+}
+.info{
+  background-color: #92bef0;
+  width:20%;
+}
+#flagImage{
+  width: 50%;
+  height: 20%;
+  display: block; /* remove extra space below image */
+  /* border: 2px solid #519aed; */
+}
+#titleOfInfo{
+  text-align: center;
+  margin-top: 10px;
+}
+.flagNameTime{
+  justify-content: space-between;
+  display: flex;
+  margin: 15px 20px;
+}
+#time{
+  font-size: 30px;
+}
+#description{
+  font-size: 20px;
+  margin: 15px 20px;
 }
