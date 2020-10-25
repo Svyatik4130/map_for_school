@@ -1,12 +1,13 @@
 [
     {
         "name": "Ukraine",
+        "ukrName": "Україна",
         "description": "heloo my name is ukraine",
         "GMT": "+3"
     },
     {
         "name": "United States",
-        "description": "The U.S. is a country of 50 states covering a vast swath of North America, with Alaska in the northwest and Hawaii extending the nation’s presence into the Pacific Ocean. Major Atlantic Coast cities are New York, a global finance and culture center, and capital Washington, DC. Midwestern metropolis Chicago is known for influential architecture and on the west coast, Los ",
+        "description": "The U.S. is a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering orth America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America,s a country of 50 states covering a vast swath of North America, with Alaska ure ca influential architecture and on the west coast, Los *вы лох*",
         "GMT": "-3"
     },
     {
@@ -143,10 +144,10 @@
         "name": "Lao People's Democratic Republic",
         "description": "Лао́с, Лао́ська Наро́дно-Демократи́чна— держава в Південно-Східній Азії, що межує на півночі з Китаєм, сході з В'єтнамом, півдні з Камбоджею, заході з Таїландом. Державний кордон проходить в основному по гребенях гір, а значна дільниця кордону з Таїландом по річці Меконг. Єдина країна цього регіону, яка не має виходу до моря. Столиця- В'єнтьян. Населення- 6 477 211осіб. Площа- 236 800 км². Національна мова- лао.",
         "GMT": "+7"
-    },
-    {
+    },{
         "name": "Lebanon",
-        "description": "Ліва́н— країна в західній Азії, що межує на півночі і сході з Сирією, на півдні з Ізраїлем, на заході омивається Середземним морем. Столиця- Бейрут. Населення- 6,006,668осіб. Площа- 10 452 км². Національна мова- арабська.",
+        "ukrName": "",
+        "description": "Ліва́н— країна в західній Азії, що межує на півночі і сході з Сирією, на півдні з Ізраїлем, на заході омивається Середземним морем. Столиця- Бейрут. Населення- 6,006,668осіб. Площа-10 452 км². Національна мова- арабська.",
         "GMT": "+2"
     },
     {
@@ -167,7 +168,7 @@
     {
         "name": "Liberia",
         "description": "Респу́бліка Лібе́рія— держава в Західній Африці. Столиця- Монровія. Населення- 4 128 572осіб. Площа- 111 369 км². Національна мова- англійська.",
-        "GMT": "0"
+        "GMT": "+0"
     },
     {
         "name": "Lesotho",

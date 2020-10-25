@@ -1,86 +1,77 @@
-.App {
-  width: 80%;
-  text-align: center;
-  margin:0;
-  overflow:hidden;
-}
-.Container{
-  justify-content: flex-start;
-  display: flex;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 path:hover {
-  fill:blue;
+  fill: #bac8a0;
   cursor: pointer;
   transition: 200ms;
-  outline:none;
+  outline: none;
 }
 path:not(:hover) {
   transition: 400ms;
-  outline:none;
+  outline: none;
 }
-
-.react-transform-component{
-  align:left;
-  justify-content: start;
+.info {
+  background-color: #5b8982;
 }
-.info{
-  background-color: #92bef0;
-  width:20%;
+#flagImage {
+  display: block;
 }
-#flagImage{
-  width: 50%;
-  height: 20%;
-  display: block; /* remove extra space below image */
-  /* border: 2px solid #519aed; */
-}
-#titleOfInfo{
+#titleOfInfo {
   text-align: center;
   margin-top: 10px;
+  margin-left: 15px;
+  color: #ffffff;
 }
-.flagNameTime{
+.flagNameTime {
   justify-content: space-between;
   display: flex;
   margin: 15px 20px;
 }
-#time{
-  font-size: 30px;
+#time {
+  font-size: 45px;
+  color: #ffffff;
+  text-align: right;
 }
-#description{
+#description {
   font-size: 20px;
   margin: 15px 20px;
+  color: #ffffff;
+}
+.descDIV {
+  overflow: scroll;
+  height: 750px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* #797367 #cec6b6 #45545F */
+
+/* #5b8982 #ffffff #bac8a0 */
+
+.react-transform-component {
+  width: 100% !important;
+  height: 100% !important;
+}
+.react-transform-element {
+  width: 100% !important;
+  height: 100% !important;
+}
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+@media (max-width: 760px) {
+  .colMap {
+    height: 400px;
+  }
+  #time {
+    font-size: 70px;
+  }
+  #fullInfo{
+    height: 250px;
+  }
+}
+@media (max-width: 550px) {
+  #time {
+    font-size: 40px;
+  }
 }
