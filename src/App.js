@@ -1,80 +1,96 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import PulseLoader from "react-spinners/PulseLoader";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Map from "./components/Map"
+import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { loggedUser } from './actions/UserActions'
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import NavMenu from './components/layout/NavMenu'
+import Main from './components/pages/Main'
+import Login from './components/pages/auth/Login'
+import Register from './components/pages/auth/Register'
+import Point from './components/layout/MapForPoint'
+import ListPoints from './components/pages/SeeAllPoints'
 
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const dispatch = useDispatch()
 
-  return (
-    <Router>
-      <div className="App">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="navbar-brand" to={"/"}>Worldik🌐</Link>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <Link className="nav-link" to={"/sign-in"}>Login <span class="sr-only">(current)</span></Link>
-              </li>
-              <li class="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>Sign-UP</Link>
-              </li>
-            </ul>
+  useEffect(() => {
+    const checkLoggedIn = async () => {
+      let token = localStorage.getItem("auth-token");
+      if (token === null) {
+        localStorage.setItem("auth-token", "");
+        token = "";
+      }
+      const tokenRes = await axios.post("/users/tokenIsValid", null, {
+        headers: { "x-auth-token": token },
+      })
+      if (tokenRes.data) {
+        const userRespond = await axios.get("/users/getme", {
+          headers: { "x-auth-token": token },
+        });
+        dispatch(
+          loggedUser({
+            token,
+            user: userRespond.data,
+          })
+        )
+      }
+
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 1000)
+    }
+    checkLoggedIn()
+  }, [])
+
+  useEffect(() => {
+    console.log(window.location.href)
+  }, [window.location.href])
+
+  if (!isLoaded) {
+    return (
+      <div className="container">
+        <div className="preloader-inner">
+          <div className="preloader">
+            <PulseLoader size={60} color={"#fff"} loading={!isLoaded} />
           </div>
-        </nav>
-
-        <div className="auth-wrapper">
-          <Switch>
-            {/* <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route> */}
-            <Route path="/">
-
-              {/* map and info */}
-              <Container fluid>
-                <Row>
-                  <Col className="colMap">
-                    <Map />
-                  </Col>
-                  <Col md={3} id="fullInfo" style={{ backgroundColor: '#5b8982', height: `${document.documentElement.clientHeight}px` }}>
-                    <Row>
-                      <h2 id="titleOfInfo" >*Please select any country*</h2>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <div className="authIMG">
-                          <img id='flagImage' style={{ width: '100%' }} src={require('./images/state.png')} alt="flag" />
-                        </div>
-                      </Col>
-                      <Col>
-                        <p id="time"></p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <div className="descDIV">
-                        <p id="description"></p>
-                      </div>
-                    </Row>
-                  </Col>
-                </Row>
-              </Container>
-
-            </Route>
-          </Switch>
         </div>
       </div>
-    </Router>
-  );
+    )
+  } else {
+    return (
+      <Router>
+        <div className="App">
+          <NavMenu />
+          <div className="auth-wrapper">
+            <Switch>
+              <Route exact path="/">
+                <Main />
+              </Route>
+              <Route path="/sign-in">
+                <Login />
+              </Route>
+              <Route path="/sign-up">
+                <Register />
+              </Route>
+              <Route path="/makepoint">
+                <Point />
+              </Route>
+              <Route path="/seepoints">
+                <ListPoints />
+              </Route>
+            </Switch>
+          </div>
+        </div>
+      </Router>
+    )
+  }
 }
 
 export default App;
